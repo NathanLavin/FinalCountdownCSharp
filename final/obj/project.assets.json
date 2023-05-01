@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\C# Final Project\\C-Final\\final\\final.csproj",
+      "projectUniqueName": "C:\\C# Final Project\\C-FinalCountDown\\FinalCountdownCSharp\\final\\final.csproj",
       "projectName": "final",
-      "projectPath": "C:\\C# Final Project\\C-Final\\final\\final.csproj",
+      "projectPath": "C:\\C# Final Project\\C-FinalCountDown\\FinalCountdownCSharp\\final\\final.csproj",
       "packagesPath": "C:\\Users\\natha\\.nuget\\packages\\",
-      "outputPath": "C:\\C# Final Project\\C-Final\\final\\obj\\",
+      "outputPath": "C:\\C# Final Project\\C-FinalCountDown\\FinalCountdownCSharp\\final\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\natha\\AppData\\Roaming\\NuGet\\NuGet.Config",
