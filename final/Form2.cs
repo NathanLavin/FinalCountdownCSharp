@@ -29,6 +29,7 @@ namespace final
                 lblBands.Text += band.ToString();
             }
             grpbxReciept.Visible = false;
+            btnPurchaseTickets.Enabled = false;
         }
 
         public void ticketPurchases(double generalAmt, double frontAmt, double vipAmt)
@@ -114,6 +115,7 @@ namespace final
                 }
             }
             grpbxReciept.Visible = true;
+            btnPurchaseTickets.Enabled = true;
             ticketPurchases(generalAmt, frontAmt, vipAmt);
         }
 
