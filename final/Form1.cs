@@ -15,6 +15,7 @@ namespace final
     {
         List<Band> bands = new List<Band>();
         Event events = new Event();
+        string[] admins = new string[1] { "#npl66399" };
         public Form1()
         {
             InitializeComponent();
@@ -33,7 +34,6 @@ namespace final
 
             grpbxAdminWindow.Visible = false;
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=NATHANS_LAPTOP\SQLEXPRESS;Initial Catalog=ADMIN;Integrated Security=True");
 
         private void btnTicketPurchaser_Click(object sender, EventArgs e)
         {
@@ -78,37 +78,31 @@ namespace final
 
             try
             {
-                String querry = "SELECT * FROM ADMIN_LOGIN WHERE ADMIN_USER = '"+txtAdminLogin.Text+"'";
-                SqlDataAdapter adapter = new SqlDataAdapter(querry,conn);
-
-                DataTable dTable = new DataTable();
-                adapter.Fill(dTable);
-
-                if (dTable.Rows.Count > 0)
+                for (int i = 0; i < admins.Length - 1; i++)
                 {
-                    adminLogin = txtAdminLogin.Text;
-                    txtAdminLogin.Text = string.Empty;
-                    txtAdminLogin.Enabled = false;
-                    lblAccess.Text = "Access Granted";
-                    lblAccess.ForeColor = System.Drawing.Color.Green;
-                    btnLogin.Enabled = false;
-                    grpbxAdminWindow.Visible = true;
+                    if (adminLogin == admins[i])
+                    {
+                        adminLogin = txtAdminLogin.Text;
+                        txtAdminLogin.Text = string.Empty;
+                        txtAdminLogin.Enabled = false;
+                        lblAccess.Text = "Access Granted";
+                        lblAccess.ForeColor = System.Drawing.Color.Green;
+                        btnLogin.Enabled = false;
+                        grpbxAdminWindow.Visible = true;
+                    }
+                    else
+                    {
+                        lblAccess.Text = "Access Denied";
+                        lblAccess.ForeColor = System.Drawing.Color.Red;
+                        txtAdminLogin.Text = string.Empty;
+                    }
                 }
-                else
-                {
-                    lblAccess.Text = "Access Denied";
-                    lblAccess.ForeColor = System.Drawing.Color.Red;
-                    txtAdminLogin.Text = string.Empty;
-                }
+                
             }
             catch
             {
                 lblAccess.Text = "Access Denied";
                 lblAccess.ForeColor = System.Drawing.Color.Red;
-            }
-            finally
-            {
-                conn.Close();
             }
 
 
